@@ -5,13 +5,13 @@ Promise.myAll = function (args) {
   }
   let result = [];
   let count = 0;
-  return new Promise((reslove, reject) => {
+  return new Promise((resolve, reject) => {
     for (let i = 0; i < args.length; i++) {
       Promise.resolve(args[i]).then(data => {
         count++;
         result[i] = data;
         if (count === args.length) {
-          reslove(result);
+          resolve(result);
         }
       }).catch(e => {
         reject(e);
@@ -21,15 +21,15 @@ Promise.myAll = function (args) {
 };
 
 Promise.myAll('.'.repeat(5).split('').map((item, index) => {
-  return new Promise((reslove, reject) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      reslove(index);
+      resolve(index);
     }, Math.random() * 1000)
   })
 })).then(res => { console.log(res) });
 
 Promise.myAll('.'.repeat(5).split('').map((item, index) => {
-  return new Promise((reslove, reject) => {
+  return new Promise((resolve, reject) => {
     reject(index);
   })
 })).catch(res => { console.log(res) });
