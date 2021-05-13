@@ -1,4 +1,4 @@
-// new 构造函数 传建一个对象，如果返回值为对象，则返回对象，否则返回this
+// new 构造函数，这个构成函数的prototype为原型 创建一个对象，如果返回值为对象，则返回对象，否则返回this
 
 //  new Person('xiaoming', 25); //name xiaoming age 25
 // new Date()

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .flex-box {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .children {
+      flex-wrap: wrap;
+      flex: 1 1 25%;
+      background: red;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      order: 2;
+    }
+
+    .order1 {
+      order: 1
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex-box">
+    <div class='children'>快1</div>
+    <div class='children'>快2</div>
+    <div class='children order1'>快3</div>
+    <div class='children'>快4</div>
+    <div class='children'>快5</div>
+    <div class='children'>快6</div>
+    <div class='children'>快7</div>
+    <div class='children'>快8</div>
+  </div>
+</body>
+
+</html>
