@@ -1,2 +1,5 @@
 # 都是一些面试的知识点和面试记录，只是概况性的，具体深入需要另外找资料  
-  other内是ts，框架、非技术的，算法和一些实现；
+  other内是ts，框架、非技术的，一些实现；
+
+# 算法在 leetcode 牛客网做
+    自己的一些刷题记录：https://github.com/lebron112/leetcode-answer

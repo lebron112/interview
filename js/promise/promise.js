@@ -1,6 +1,16 @@
 /*
   实现一个promise 可以链式调用then 
+  需要知道promise A/A+规范
+  内部有3个状态 一旦变了不能再变
+  链式调用，这个最复杂
+  每个promise都有处理成功的函数数组和失败的函数数组
+  需要保存首次成功的值 作为下一次链式调用.then的参数
+  .then 内部需要判断当前promise的3中状态
+  1、pengding中 处理函数放入数组，改函数需要返回一个promise
+  2、失败或成功则直接调用
+  手写过程比较长
  */
+
 const PENDING = 'pending';
 const FULLED = 'fulled';
 const REJECT = 'reject';
