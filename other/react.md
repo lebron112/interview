@@ -1,4 +1,4 @@
-# 生命周期  
+  # 生命周期  
 `
   挂载前/后  
   更新前/后 更新时shouldComponentUpdate  
