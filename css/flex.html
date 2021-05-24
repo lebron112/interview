@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
+  <!-- <style>
     .flex-box {
       display: flex;
       flex-wrap: wrap;
@@ -24,11 +24,31 @@
     .order1 {
       order: 1
     }
+  </style> -->
+  <style>
+    .parent {
+      width: 200px;
+      display: flex;
+    }
+
+    .box1 {
+      width: 100px;
+      flex: 0 1 0;
+      height: 100px;
+      background-color: red;
+    }
+
+    .box2 {
+      width: 200px;
+      flex: 0 2 0;
+      height: 100px;
+      background-color: green;
+    }
   </style>
 </head>
 
 <body>
-  <div class="flex-box">
+  <!-- <div class="flex-box">
     <div class='children'>快1</div>
     <div class='children'>快2</div>
     <div class='children order1'>快3</div>
@@ -37,6 +57,10 @@
     <div class='children'>快6</div>
     <div class='children'>快7</div>
     <div class='children'>快8</div>
+  </div> -->
+  <div class='parent'>
+    <div class='box1'></div>
+    <div class='box2'></div>
   </div>
 </body>
 
