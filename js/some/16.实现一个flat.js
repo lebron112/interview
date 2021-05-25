@@ -19,7 +19,8 @@ const flatten2 = (arr) => {
   while (stack.length) {
     const next = stack.pop();
     if (Array.isArray(next)) {
-      stack.push(...next);
+      [].push.apply(stack, next);
+      // stack.push(...next);
     } else {
       res.push(next);
     }
