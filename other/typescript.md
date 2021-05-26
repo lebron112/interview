@@ -14,3 +14,28 @@
 
 # 如何给windows增加一个对象
     不推荐如此操作，可以使用 declare namespace XXX 来声明，，不导出即可全局获取到，且无需引入，导出会成为模块，无法全局使用
+
+# typescript模块解析是如何查找的
+    导入策略 分相对导入和分相对模块导入
+      相对模块导入  引入一个 ./module 
+        1、先找出 ./module.ts或./module/index.ts 
+        2、没有就找./module.d.ts或 ./module/index.d.ts 
+      非相对模块导入
+        1、手下查找目录下有没有.ts
+        2、没有的话就找目录下有没有 xx.d.ts
+        3、还是没有的话就从上级目录一层一层一层往上找
+    模块解析策略
+      相对模块解析
+        1、查找是否有.ts
+        2、没有的话找是否存在.d.ts
+        3、还是没有 查找是否有跟模块同名的目录，没有就不找了
+        4、有的话找录下package.json里的types指定的文件，
+        5、没有的话找index.ts
+        6、还是没有找index.d.ts
+      非相对模块解析  比如引入一个 import react from 'react'
+        1、找node_modlues里有没有.ts
+        2、没有就找.d.ts
+        3、还是没有就找有没有同名的目录，有同名目录就找到这个目录里的package.json的types 找index.ts没有就找index.d.ts
+        4、没有找到同名目录下的文件用@types/react 目录下找没有的话就结束了，说明没找到，提示要去下载
+      ts的模块解析策略默认为Classic，其他情况跟node一样
+      tsconfig的 baseUrl 设置baseUrl来告诉编译器到哪里去查找模块。 所有非相对模块导入都会被当做相对于baseUrl

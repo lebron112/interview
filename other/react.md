@@ -69,7 +69,7 @@
       同步更新的情况，定时器，手动添加的事件，promise.then后面的时候；
       异步，并发是由异步api实现，其实是一个更新的事务，setState一个值多次，取最后的，setState不同值，最后会合并进行一次批量更新；
     6、简单原理 ，每次执行把新的state存入等待更新队列中，判断当前是否需要批量更新，是的话就把要组件放入待更新队列中，
-      batchedUpdates，更新事务，其实可以理解成跟类似数据库的事务，找出需要更新的dom， 最后一次性做完；
+      batchedUpdates，更新事务，其实可以理解成类似数据库的事务，找出需要更新的dom， 最后一次性做完；
       不受控制的就是同步更新的情况；
     
 # wrappedComponentRef和ref的区别
@@ -92,3 +92,7 @@
     shouldComponentUpdate 用React.memo的第二个参数 比较前一个状态和下一个状态
     componentDidUpdate useEffect 第二个参数不传递即可
     componentWillUnmount   useEffect 第二个参数为空或者不传递，并返回一个函数
+
+# unsafe类生命周期有生命问题
+    componentWillMount、componentWillReceiveProps、componentWillUpdate在16版本以后被取消了，在17版本证书被删除了
+    其实hooks也有这样的递归问题，比如在useEffet里监听了一个state变化后，又去改变这个state，这样就会无限循环，递归溢出
