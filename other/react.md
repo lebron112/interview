@@ -85,3 +85,10 @@
     6、使用webWork分散处理cpu密集型任务，可以开启多个
     7、IntersectionObserver 隐藏不在视窗内的内容，虚拟滚动，表单类组件会导致bug
     8、切忌不要过度优化，过度优化是万恶之源，一定要根据业务指标去做针对性的优化
+
+# hooks为什么没有生命周期
+    因为hooks本质是函数，不存在生命周期这个一说，但是可以用 useEffect去模拟
+    componentDidMount useEffect 第二个参数为空
+    shouldComponentUpdate 用React.memo的第二个参数 比较前一个状态和下一个状态
+    componentDidUpdate useEffect 第二个参数不传递即可
+    componentWillUnmount   useEffect 第二个参数为空或者不传递，并返回一个函数
