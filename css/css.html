@@ -7,102 +7,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .p1 {
-      display: flex;
-      /* justify-content: sp; */
-    }
-
-    .left {
-      width: 300px;
-      height: 300px;
-      background-color: red;
-    }
-
-    .mid {
-      flex: 1 ;
-      background: green;
-    }
-
-    .right {
-      width: 300px;
-      height: 300px;
-      background-color: red;
-    }
-
-
-    .mid {
-      flex: 1;
-      background: green
-    }
-
-    .p3 {
-      border: 1px solid #000;
-    }
-
-    .p2 {
+    .body {
       position: relative;
+      width: 200px;
     }
 
-    .left-1 {
-      width: 300px;
-      height: 300px;
-      background-color: red;
+    .point {
       position: absolute;
-      top: 0;
-      left: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
     }
-    .mid1 {
-      margin-left: 300px;
-      margin-right: 300px;
+    .left {
+      background-color: green;
+      animation: left 2s infinite cubic-bezier(1, 1, 1.0, 1);;
     }
-
-
-    .right-1 {
-      width: 300px;
-      height: 300px;
+    .right {
       background-color: red;
-      position: absolute;
-      top: 0;
-      right: 0;
+      animation: right 2s infinite cubic-bezier(1, 1, 1.0, 1);;
     }
-
-    .left1 {
-      float: left;
-      width: 300px;
-      height: 300px;
-      background-color: red;
+    @keyframes right {
+      0% {
+        left: 60px;
+        z-index: 2;
+        transform: scale(1);
+      }
+      25% {
+        left: 40px;
+        transform: scale(1.1);
+        z-index: 2;
+      }
+      50% {
+        left: 0px;
+        transform: scale(1);
+        z-index: 2;
+      }
+      50.5% {
+        z-index: 1;
+      }
+      75% {
+        left: 30px;
+        transform: scale(0.75);
+        z-index: 1;
+      }
+      100% {
+        left: 60px;
+        transform: scale(1);
+        z-index: 1;
+      }
+      
     }
-
-    .right1 {
-      float: right;
-      width: 300px;
-      height: 300px;
-      background-color: red;
-    }
-
-    .mid2 {
-      margin: 0 300px;
-      background: green;
-      height: 300px;
+    @keyframes left {
+      0% {
+        left: 0;
+        z-index: 1;
+      }
+      25% {
+        left: 30px;
+        transform: scale(0.75);
+        z-index: 1;
+      }
+      50% {
+        left: 60px;
+        transform: scale(1);
+        z-index: 1;
+      }
+      50.5% {
+        z-index: 2;
+      }
+      75% {
+        left: 30px;
+        transform: scale(1.1);
+        z-index: 2;
+      }
+      100% {
+        left: 0;
+        transform: scale(1);
+        z-index: 2;
+      }
+      
     }
   </style>
 </head>
 
 <body>
-  <!-- <div class='p1'>
-    <div class="left"></div>
-    <div class="mid"></div>
-    <div class="right"></div>
-  </div> -->
-  <!-- <div class='p2'>
-    <div class="left-1 ab"></div>
-    <div class="mid1"></div>
-    <div class="right-1 ab"></div>
-  </div> -->
-  <div class='p3'>
-    <div class="left1"></div>
-    <div class="right1"></div>
-    <div class="mid2"></div>
+
+  <div class='body'>
+    <div class="point left"></div>
+    <div class="point right"></div>
   </div>
 </body>
 

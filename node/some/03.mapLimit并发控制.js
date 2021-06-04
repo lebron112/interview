@@ -11,7 +11,7 @@ const mapLimit = (arrFn, limit) => {
     let index = 0;
     const checkFn = () => {
       while (doing < limit && index < arrFn.length) {
-        doing ++;
+        doing++;
         let i = index;
         Promise.resolve(arrFn[index]()).then(data => {
           doing--;
