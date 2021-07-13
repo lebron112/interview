@@ -56,7 +56,7 @@ const useDebounce = (fn, wait, deep = []) => {
   }, [fn])
   return useCallback(function () {
     const n = Date.now() - current.t;
-    clearTimeout(current);
+    clearTimeout(current.delay);
     const selt = this;
     if (n > wait) {
       current.fn.apply(selt, [...arguments]);
