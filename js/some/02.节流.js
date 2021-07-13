@@ -66,7 +66,7 @@ const useDebounce = (fn, wait, deep = []) => {
         current.fn.apply(selt, [...arguments]);
       }, wait);
     }
-  }, [deep]);
+  }, deep);
 };
 
 deep();
