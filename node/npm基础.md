@@ -7,3 +7,6 @@
     当项目依赖一个插件的多个版本时，会全部引进进来，然后分布放在依赖它们的项目下的node_modules下面；
     当包内指定的版本和外部node_modules里目录下的版本不一样时，会在该包的node_modules里重新安装;
     如果多次依赖的版本相同时，则放在顶级的node_modules下面；
+
+# devDependencies
+    开发时依赖，如果在执行npm install前执行 NODE_ENV=production 将不会执行, 在制作docker-compose 镜像时，可以指定NODE_ENV=production 减小镜像制作后的体积
